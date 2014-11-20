@@ -2,14 +2,14 @@ Bootstrap
 =========
 
 
-Per iniciar el projecte s'ha d'anar a la URL referenciada a /beeter.html  en el qual es troben totes les funcionalitats:
-Consultar un sting.
+Per iniciar el projecte s'ha d'anar a la URL referenciada en cada .html  en el qual es troben totes les funcionalitats:
+Consultar un repositori.
 
 Esborrar un sting.
 
-Crear un sting.
+Crear un repositori.
 
-Editar un sting.
+Editar un repositori.
 
-Consultar un listado de stings.
+Consultar un listado de repositoris.
 
