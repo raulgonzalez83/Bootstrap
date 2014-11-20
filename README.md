@@ -3,9 +3,10 @@ Bootstrap
 
 
 Per iniciar el projecte s'ha d'anar a la URL referenciada en cada .html  en el qual es troben totes les funcionalitats:
+
 Consultar un repositori.
 
-Esborrar un sting.
+Esborrar un repositori.
 
 Crear un repositori.
 
