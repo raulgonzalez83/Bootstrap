@@ -6,43 +6,24 @@ $.ajaxSetup({
     headers: { 'Authorization': "Basic "+ btoa(USERNAME+':'+PASSWORD) }
 });
 
-
-$("#button_create_repos").click(function(e) {
+$("#button_to_create").click(function(e) {
 	e.preventDefault();
-	
-	 var newRepos = {
-	 "description": $("#description_to_create").val(),
-		"public": true,
-		"files": {
-		"Nwdfnlsadngklgalsgn": {  
-      "content": $("#gist_name_to_create").val()
-			}
-	
-		}
-	 }
 
+    var newRepo = new Object();
+	newRepo.name = $("#repository_name_to_create").val();
+	newRepo.description = $("#description_to_create").val();
+ 	newRepo.homepage = "https://github.com";
+ 	newRepo.private = false;
+	newRepo.has_issues = true;
+	newRepo.has_wiki = true;
+	newRepo.has_downloads = true;
 
-	
-		if($("#description_to_create").val()=="" ){//Condición si el campo Description está vacio
-		//$("#create_result").text("Campo vacío.");
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Rellena el campo de descripción </div>').appendTo($("#create_result"));
-		
-	}
-			if($("#gist_name_to_create").val()=="" ){//Condición si el campo Content está vacio
-		//$("#create_result").text("Campo vacío.");
-		$('<div class="alert alert-danger"> <strong>Oh!</strong> Rellena el campo de contenido del Gist </div>').appendTo($("#create_result"));
-		
-	}
-	else{
-		createRepos(newRepos);
-	}
-	
+	createRepo(newRepo);
 });
 
-
-function createRepos(newRepos) {
-	var url = API_BASE_URL + '/user';
-	var data = JSON.stringify(newRepos);
+function createRepo(repository) {
+	var url = API_BASE_URL + '/user/repos';
+	var data = JSON.stringify(repository);
 
 	$("#create_result").text('');
 
